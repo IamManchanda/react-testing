@@ -1,10 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const CommentList = () => {
   return (
-    <Fragment>
-      <p>Comment List</p>
-    </Fragment>
+    <p>Comment List</p>
   );
 };
 
