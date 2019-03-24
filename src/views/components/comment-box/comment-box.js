@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { handleSaveComment } from 'store/actions';
+import { handleSaveComment, handleFetchComments } from 'store/actions';
 
-const CommentBox = ({ handleSaveComment }) => {
+const CommentBox = ({ handleSaveComment, handleFetchComments }) => {
   const [comment, setComment] = useState('');
   const handleChange = (event) => {
     setComment(event.target.value);
@@ -23,15 +23,25 @@ const CommentBox = ({ handleSaveComment }) => {
       />
       <button
         type="submit"
-        className="button primary radius bordered shadow">
+        className="button primary radius bordered shadow"
+        id="save-comments">
         Submit Comment
       </button>
+      <button
+        type="button"
+        className="button primary radius bordered shadow"
+        id="fetch-comments" 
+        onClick={ handleFetchComments }>Fetch Comments</button>
     </form>
   );
 };
 
 CommentBox.defaultProps = {
   handleSaveComment: () => {},
+  handleFetchComments: () => {},
 };
 
-export default connect(null, { handleSaveComment })(CommentBox);
+export default connect(
+  null, 
+  { handleSaveComment, handleFetchComments },
+)(CommentBox);

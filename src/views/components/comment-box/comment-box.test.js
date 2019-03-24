@@ -14,11 +14,11 @@ describe('<CommentBox />', () => {
   });
 
   describe('inner elements and components rendering', () => {
-    it('renders <textarea /> element and only once', () => {
+    it('renders <textarea /> element and exactly once', () => {
       expect(wrapper.find('textarea').length).toEqual(1);
     });
-    it('renders <button /> element and only once', () => {
-      expect(wrapper.find('button').length).toEqual(1);
+    it('renders <button /> element and exactly twice', () => {
+      expect(wrapper.find('button').length).toEqual(2);
     });
   });
 

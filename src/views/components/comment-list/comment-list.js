@@ -14,5 +14,4 @@ CommentList.defaultProps = {
 
 export default connect(
   ({ comments }) => ({ comments }),
-  {},
 )(CommentList);

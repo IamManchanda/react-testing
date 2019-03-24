@@ -12,10 +12,10 @@ describe('<App />', () => {
   });
 
   describe('inner elements and components rendering', () => {
-    it('renders the <CommentBox /> component and only once', () => {
+    it('renders the <CommentBox /> component and exactly once', () => {
       expect(wrapper.find(CommentBox).length).toEqual(1);
     });
-    it('renders the <CommentList /> component and only once', () => {
+    it('renders the <CommentList /> component and exactly once', () => {
       expect(wrapper.find(CommentList).length).toEqual(1);
     });
   });
