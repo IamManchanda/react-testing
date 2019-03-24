@@ -30,4 +30,8 @@ const CommentBox = ({ handleSaveComment }) => {
   );
 };
 
+CommentBox.defaultProps = {
+  handleSaveComment: () => {},
+};
+
 export default connect(null, { handleSaveComment })(CommentBox);

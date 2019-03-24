@@ -4,10 +4,8 @@ import { createStore } from 'redux';
 
 import reducers from 'store/reducers';
 
-const store = createStore(reducers, {});
-
-const Root = ({ children }) => (
-  <Provider store={ store }>
+const Root = ({ children, initialState = {} }) => (
+  <Provider store={ createStore(reducers, initialState) }>
     { children }
   </Provider>
 );

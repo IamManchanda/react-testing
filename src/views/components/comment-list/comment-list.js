@@ -1,9 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const CommentList = () => {
-  return (
-    <p>Comment List</p>
-  );
+const CommentList = ({ comments }) => 
+  <ul>
+    { comments.map(
+        (comment) => <li key={ comment }>{ comment }</li>,
+      ).reverse() }
+  </ul>;
+
+CommentList.defaultProps = {
+  comments: [],
 };
 
-export default CommentList;
+export default connect(
+  ({ comments }) => ({ comments }),
+  {},
+)(CommentList);
