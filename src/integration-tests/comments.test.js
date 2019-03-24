@@ -23,11 +23,11 @@ describe('Integration Tests: Comments', () => {
   it('can fetch list of comments and display them', (done) => {
     const wrapper = mount(<Root><App /></Root>);
     wrapper.find('#fetch-comments').simulate('click');
-    setTimeout(() => {
+    moxios.wait(() => {
       wrapper.update();
       expect(wrapper.find('li').length).toEqual(2);
       done();
       wrapper.unmount();
-    }, 0);
+    });
   });
 });
