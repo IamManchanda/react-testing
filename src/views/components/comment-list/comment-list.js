@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 
 const CommentList = ({ comments }) => 
   <ul>
-    { comments.map(
-        (comment) => <li key={ comment }>{ comment }</li>,
-      ).reverse() }
+    { comments.map((comment) => <li key={ comment }>{ comment }</li>) }
   </ul>;
 
 CommentList.defaultProps = {
